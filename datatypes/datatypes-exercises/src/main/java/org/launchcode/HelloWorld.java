@@ -1,12 +1,10 @@
 package org.launchcode;
 
-public class HelloWorld {
-}
 
 import java.util.Scanner;
 
 public class HelloWorld {
-    public static void main(Stirng[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Hello, what is your name?");
 
