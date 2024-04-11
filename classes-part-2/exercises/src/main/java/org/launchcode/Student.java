@@ -2,6 +2,17 @@ package org.launchcode;
 
 public class Student {
 
+    public String getGradeLevel() {
+        if (numberOfCredits <= 29) {
+            return "Freshman";
+        } else if (numberOfCredits <= 59) {
+            return "Sophmore";
+        } else if (numberOfCredits <= 89) {
+            return "Junior";
+        } else {
+            return "Senior";
+        }
+    }
     private static int nextStudentId = 1;
     private String name;
     private int studentId;
@@ -35,8 +46,16 @@ public class Student {
 //    }
 
     // TODO: Complete the addGrade method.
+    // This method updates the student's GPA based on the new course grade and course credits.
     public void addGrade(int courseCredits, double grade) {
-        // Update the appropriate fields: numberOfCredits, gpa
+        // Calculate the current total quality score by multiplying the current GPA by the total number of credits.
+        double totalQualityScore = this.gpa * this.numberOfCredits;
+        // Update the total quality score by adding the quality score of the new course (grade * courseCredits).
+        totalQualityScore += courseCredit * grade;
+        // Update the total number of credits by adding the credits of the new course.
+        this.numberOfCredits += courseCredits;
+        // Calculate the new GPA by dividing the updated total quality score by the updated total number of credits.
+        this.gpa = totalQualityScore/this.numberOfCredits;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
