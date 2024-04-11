@@ -1,22 +1,21 @@
 package org.launchcode;
-import java.time.LocalDate;
 
 public class MenuItem {
-
     private String name;
     private String description;
     private double price;
     private String category;
-    private final LocalDate dateAdded;
+    private boolean isNew;
 
     public MenuItem(String name, String description, double price, String category) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.category = category;
-        this.dateAdded = LocalDate.now();
+        this.isNew = true; // By default, all menu items are considered new
     }
 
+    // Getters and setters
     public String getName() {
         return name;
     }
@@ -49,7 +48,16 @@ public class MenuItem {
         this.category = category;
     }
 
-    public LocalDate getDateAdded() {
-        return dateAdded;
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public void setNew(boolean isNew) {
+        this.isNew = isNew;
+    }
+
+    @Override
+    public String toString() {
+        return name + " - " + description + " - $" + price + " - " + category + " (New: " + isNew + ")";
     }
 }
