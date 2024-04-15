@@ -26,8 +26,14 @@ public class BalancedBrackets {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
+
+                // If brackets become negative, it means there is a closing bracket without an opening one
+                if (brackets < 0) {
+                    return false;
+                }
             }
         }
+        // If brackets is not zero, it means there are unclosed brackets
         return brackets == 0;
     }
 }
