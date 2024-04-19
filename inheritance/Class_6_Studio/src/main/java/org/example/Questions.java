@@ -1,4 +1,12 @@
 package org.example;
 
-public class Questions {
+public abstract class Question {
+    protected String text;
+
+    public Question(String text) {
+        this.text = text;
+    }
+
+    public abstract void displayQuestion();
+    public abstract boolean checkAnswer(String response);
 }
