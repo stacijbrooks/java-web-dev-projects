@@ -14,9 +14,11 @@ public class QuizRunner {
                 1));
 
         quiz.addQuestion(new CheckboxQuestion(
-                "Which are colors of the rainbow?",
-                Arrays.asList("Red", "Green", "Blue", "Yellow", "Purple"),
-                Arrays.asList(0, 2, 3)));
+                "Which animals are mammals?",
+                Arrays.asList("Dog", "Snake", "Dolphin", "Frog", "Cat"),
+                Arrays.asList(0, 2, 4)
+        ));
+
 
         quiz.addQuestion(new TrueFalseQuestion(
                 "Is the sun a star?",

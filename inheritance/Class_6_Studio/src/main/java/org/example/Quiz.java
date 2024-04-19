@@ -30,4 +30,8 @@ public class Quiz {
         }
         scanner.close();
     }
+
+    public void addQuestion(Question question) {
+        questions.add(question);
+    }
 }
